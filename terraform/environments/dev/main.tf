@@ -41,3 +41,15 @@ module "network" {
 
   depends_on = [module.project_services]
 }
+
+module "iam" {
+  source = "../../modules/iam"
+
+  project_id = var.project_id
+
+  gke_node_service_account_id   = "resumeops-dev-gke-nodes"
+  resume_api_service_account_id = "resumeops-dev-resume-api"
+  ai_worker_service_account_id  = "resumeops-dev-ai-worker"
+
+  depends_on = [module.project_services]
+}

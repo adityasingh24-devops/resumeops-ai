@@ -12,3 +12,18 @@ output "subnetwork_name" {
   description = "ResumeOps AI development GKE subnet name."
   value       = module.network.subnetwork_name
 }
+
+output "gke_node_service_account_email" {
+  description = "Dedicated GKE node service account email."
+  value       = module.iam.gke_node_service_account_email
+}
+
+output "resume_api_service_account_email" {
+  description = "Resume API service account email."
+  value       = module.iam.resume_api_service_account_email
+}
+
+output "ai_worker_service_account_email" {
+  description = "AI worker service account email."
+  value       = module.iam.ai_worker_service_account_email
+}
