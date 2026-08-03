@@ -27,3 +27,17 @@ output "ai_worker_service_account_email" {
   description = "AI worker service account email."
   value       = module.iam.ai_worker_service_account_email
 }
+output "gke_cluster_name" {
+  description = "ResumeOps AI development GKE cluster name."
+  value       = module.gke.cluster_name
+}
+
+output "gke_cluster_location" {
+  description = "ResumeOps AI development GKE cluster location."
+  value       = module.gke.cluster_location
+}
+
+output "gke_node_pool_name" {
+  description = "ResumeOps AI development GKE node pool name."
+  value       = module.gke.node_pool_name
+}

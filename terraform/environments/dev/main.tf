@@ -53,3 +53,28 @@ module "iam" {
 
   depends_on = [module.project_services]
 }
+
+module "gke" {
+  source = "../../modules/gke"
+
+  project_id = var.project_id
+  zone       = var.zone
+
+  cluster_name   = "resumeops-dev-gke"
+  node_pool_name = "resumeops-dev-primary"
+
+  network_id    = module.network.network_id
+  subnetwork_id = module.network.subnetwork_id
+
+  pod_ip_range_name     = module.network.pod_ip_range_name
+  service_ip_range_name = module.network.service_ip_range_name
+
+  node_service_account_email = module.iam.gke_node_service_account_email
+
+  machine_type = "e2-standard-2"
+
+  depends_on = [
+    module.project_services,
+    module.iam,
+  ]
+}

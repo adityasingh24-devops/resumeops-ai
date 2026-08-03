@@ -8,3 +8,9 @@ variable "region" {
   type        = string
   default     = "asia-south1"
 }
+
+variable "zone" {
+  description = "The default GCP zone for zonal ResumeOps AI resources."
+  type        = string
+  default     = "asia-south1-a"
+}
