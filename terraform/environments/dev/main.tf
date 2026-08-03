@@ -78,3 +78,10 @@ module "gke" {
     module.iam,
   ]
 }
+
+module "storage" {
+  source = "../../modules/storage"
+
+  project_id  = var.project_id
+  bucket_name = "${local.name_prefix}-storage"
+}

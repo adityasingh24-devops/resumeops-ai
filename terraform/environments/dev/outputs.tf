@@ -41,3 +41,11 @@ output "gke_node_pool_name" {
   description = "ResumeOps AI development GKE node pool name."
   value       = module.gke.node_pool_name
 }
+
+output "storage_bucket_name" {
+  value = module.storage.bucket_name
+}
+
+output "storage_bucket_url" {
+  value = module.storage.bucket_url
+}
