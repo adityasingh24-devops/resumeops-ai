@@ -49,3 +49,11 @@ output "storage_bucket_name" {
 output "storage_bucket_url" {
   value = module.storage.bucket_url
 }
+
+output "artifact_registry_repository" {
+  value = module.artifact_registry.repository_name
+}
+
+output "artifact_registry_location" {
+  value = module.artifact_registry.repository_location
+}
